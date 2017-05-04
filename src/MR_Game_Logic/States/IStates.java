@@ -18,13 +18,15 @@ public interface IStates {
     public IStates setStartingArea(int area);
     public IStates startGame();
     //AwaitCardSelection
-    public IStates resolveTreasureCard();
-    public IStates resolveTrapCard();
-    public IStates resolveEventCard();
+    public IStates resolveCard(String card);
+    public IStates resolveTreasureCard(int roll, int roll2);
+    public IStates resolveTrapCard(int firstRoll, int SecondRoll);
+    public IStates resolveEventCard(int option);
     //AwaitRest
     public IStates setRestOption(int option);
     //AwaitTrading
-    public IStates tradeOption(int option);
+    public IStates skip();
+    public IStates spellSelected(int option);
     public IStates sellOption(int option);
     public IStates buyOption(int option);
     

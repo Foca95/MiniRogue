@@ -75,22 +75,32 @@ public class StateAdapter implements IStates{
     }
 
     @Override
-    public IStates tradeOption(int option) {
+    public IStates skip() {
+        return this;
+    }
+    
+    @Override
+    public IStates resolveCard(String card){
+        return this;
+    }
+    
+    @Override
+    public IStates resolveTreasureCard(int roll, int roll2) {
         return this;
     }
 
     @Override
-    public IStates resolveTreasureCard() {
+    public IStates resolveTrapCard(int firstRoll, int SecondRoll) {
         return this;
     }
 
     @Override
-    public IStates resolveTrapCard() {
+    public IStates resolveEventCard(int option) {
         return this;
     }
 
     @Override
-    public IStates resolveEventCard() {
+    public IStates spellSelected(int option) {
         return this;
     }
     

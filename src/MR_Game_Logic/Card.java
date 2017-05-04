@@ -30,7 +30,6 @@ public class Card implements Serializable{
     public Card(){
         cards = new ArrayList<>();
         cardsBoss = new ArrayList<>();
-        fillDeck();
     }
     
     public String getName(){
@@ -38,6 +37,7 @@ public class Card implements Serializable{
     }
     
     public List<Card> getCards(){
+        fillDeck();
         shuffleCards();
         return cards;
     }
@@ -70,9 +70,16 @@ public class Card implements Serializable{
     public void shuffleCardsBoss(int level){
        long seed = System.nanoTime();
        Collections.shuffle(cardsBoss, new Random(seed));
-       if(cardsBoss.contains(x)){
-           cardsBoss.remove(x);
+       for(int i = 0; i < cardsBoss.size(); i++){
+           if( getPos(i) instanceof Boss_Monster){
+               cardsBoss.remove(i);
+               break;
+           }
        }
        cardsBoss.add(new Boss_Monster(level));
+    }
+    
+    public Card getPos(int i){
+        return cardsBoss.get(i);
     }
 }

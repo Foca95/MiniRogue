@@ -6,6 +6,7 @@
 package MR_Game_Logic.States;
 
 import MR_Game_Logic.*;
+import java.util.List;
 /**
  *
  * @author pedri
@@ -17,18 +18,10 @@ public class AwaitTrading extends StateAdapter implements Constants{
     }
     
     @Override
-    public IStates tradeOption(int option){
-        if(option == BUY){
-            buyOption(option);
-            return this;
-        }
-        if(option == SELL){
-            sellOption(option);
-            return this;
-        }if(option == SKIP){
-            return new AwaitCardSelection(getGame());
-        }
-        return this;
+    public IStates skip() {
+        getGame().setArenaLevel(getGame().getArenaLevel()+ 1);
+        return new AwaitCardSelection(getGame());
+
     }
     
     @Override
@@ -36,20 +29,29 @@ public class AwaitTrading extends StateAdapter implements Constants{
         Player p = getGame().getPlayer();
         int pArmor = p.getArmor();
         int pGold = p.getGold();
-        String pSpell[] = p.getSpells();
+        List<Spells> pSpell = p.getSpells();
         if(option == 1){
             if(pArmor <= 0){
+                getGame().setUiText("Nao tem armor");
                 return this;
             }
+            getGame().setUiText("Vendeu 1 Armor e ganhou 3 de Gold");
             p.setGold(pGold + 3);
             p.setArmor(pArmor - 1);
         }
         if(option == 2){
-            if(pSpell.length == 0){
+            if(pSpell.isEmpty()){
+                getGame().setUiText("Nao tem spells para vender");
                 return this;
             }
             //Falta venda de spell especifico
         }
+        return this;
+    }
+    
+     @Override
+    public IStates spellSelected(int option) {
+        
         return this;
     }
     
@@ -60,10 +62,11 @@ public class AwaitTrading extends StateAdapter implements Constants{
         int pHealth = p.getHp();
         int pArmor = p.getArmor();
         int pGold = p.getGold();
-        String pSpell[] = p.getSpells();
+        List<Spells> pSpell = p.getSpells();
         switch(option){
             case 1:
                 if(pGold < 1){
+                    getGame().setUiText("Nao tem Gold suficiente");
                     break;
                 }
                 p.setGold(pGold - 1);
@@ -71,6 +74,7 @@ public class AwaitTrading extends StateAdapter implements Constants{
                 break;
             case 2:
                 if(pGold < 1){
+                    getGame().setUiText("Nao tem Gold suficiente");
                     break;
                 }
                 p.setGold(pGold - 1);
@@ -78,6 +82,7 @@ public class AwaitTrading extends StateAdapter implements Constants{
                 break;
             case 3:
                 if(pGold < 3){
+                    getGame().setUiText("Nao tem Gold suficiente");
                     break;
                 }
                 p.setGold(pGold - 3);
@@ -85,6 +90,7 @@ public class AwaitTrading extends StateAdapter implements Constants{
                 break;
             case 4:
                 if(pGold < 6){
+                    getGame().setUiText("Nao tem Gold suficiente");
                     break;
                 }
                 p.setGold(pGold - 6);
@@ -92,10 +98,16 @@ public class AwaitTrading extends StateAdapter implements Constants{
                 break;
             case 5:
                 if(pGold < 8){
+                    getGame().setUiText("Nao tem Gold suficiente");
+                    break;
+                }
+                if(p.spells.size() == 2){
+                    getGame().setUiText("Ja tem o maximo de spells");
                     break;
                 }
                 p.setGold(pGold - 8);
                 //Falta comprar spell especifico
+                
                 break;
         }
         return this;

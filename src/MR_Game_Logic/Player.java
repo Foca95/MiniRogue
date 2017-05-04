@@ -17,10 +17,15 @@ public class Player implements Constants{
     public int gold;
     public int food;
     public int armor;
-    public String[] spells;
+    public List<Spells> spells;
     public int rank;
     public int xp;
     public String name;
+    public int dmg;
+    
+    public Player(){
+        
+    }
     
     public Player(int difficulty, String name){
         switch(difficulty){
@@ -32,7 +37,7 @@ public class Player implements Constants{
                 this.food = 6;
                 this.rank = 1;
                 this.xp = 0;
-                this.spells = new String[2];
+                this.spells = new ArrayList<>();
                 break;
             case HARD:
                 this.name = name;
@@ -42,7 +47,7 @@ public class Player implements Constants{
                 this.food = 5;
                 this.rank = 1;
                 this.xp = 0;
-                this.spells = new String[2];
+                this.spells = new ArrayList<>();
                 break;
             case IMPOSSIBLE:
                 this.name = name;
@@ -52,7 +57,7 @@ public class Player implements Constants{
                 this.food = 3;
                 this.rank = 1;
                 this.xp = 0;
-                this.spells = new String[2];
+                this.spells = new ArrayList<>();
                 break;
             default: //CASUAL
                 this.name = name;
@@ -62,7 +67,7 @@ public class Player implements Constants{
                 this.food = 6;
                 this.rank = 1;
                 this.xp = 0;
-                this.spells = new String[2];
+                this.spells = new ArrayList<>();
                 break;
         }
     }
@@ -99,11 +104,11 @@ public class Player implements Constants{
         this.armor = armor;
     }
 
-    public String[] getSpells() {
+    public List<Spells> getSpells() {
         return spells;
     }
 
-    public void setSpells(String[] spells) {
+    public void setSpells(List<Spells> spells) {
         this.spells = spells;
     }
 
@@ -130,4 +135,14 @@ public class Player implements Constants{
     public void setName(String name) {
         this.name = name;
     }
+
+    public int getDmg() {
+        return dmg;
+    }
+
+    public void setDmg(int dmg) {
+        this.dmg = dmg;
+    }
+    
+    
 }

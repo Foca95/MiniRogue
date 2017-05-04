@@ -31,6 +31,7 @@ public class AwaitBeginning extends StateAdapter{
     @Override
     public IStates setStartingArea(int area){
         getGame().setArena(area);
+        getGame().setArenaLevel(area);
         return this;
     }
     

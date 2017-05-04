@@ -3,20 +3,23 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/pedri/Google%20Drive/ISEC/PA/MiniRogue/src/MR_Game_Logic/States/AwaitBeginning.java</file>
-            <file>file:/C:/Users/pedri/Google%20Drive/ISEC/PA/MiniRogue/src/MR_Game_Logic/States/AwaitTrading.java</file>
-            <file>file:/C:/Users/pedri/Google%20Drive/ISEC/PA/MiniRogue/src/MR_Game_Logic/MR_Game.java</file>
-            <file>file:/C:/Users/pedri/Google%20Drive/ISEC/PA/MiniRogue/src/MR_Game_Logic/Player.java</file>
-            <file>file:/C:/Users/pedri/Google%20Drive/ISEC/PA/MiniRogue/src/MR_Game_Logic/Card.java</file>
-            <file>file:/C:/Users/pedri/Google%20Drive/ISEC/PA/MiniRogue/src/MR_Game_Logic/Constants.java</file>
-            <file>file:/C:/Users/pedri/Google%20Drive/ISEC/PA/MiniRogue/src/MR_Game_Logic/States/AwaitRest.java</file>
-            <file>file:/C:/Users/pedri/Google%20Drive/ISEC/PA/MiniRogue/src/MR_Game_Logic/States/StateAdapter.java</file>
-            <file>file:/C:/Users/pedri/Google%20Drive/ISEC/PA/MiniRogue/src/MR_Game_Logic/Dice.java</file>
-            <file>file:/C:/Users/pedri/Google%20Drive/ISEC/PA/MiniRogue/src/MR_Game_Logic/GameData.java</file>
-            <file>file:/C:/Users/pedri/Google%20Drive/ISEC/PA/MiniRogue/src/MR_Game_Logic/Cards/Boss_Monster.java</file>
-            <file>file:/C:/Users/pedri/Google%20Drive/ISEC/PA/MiniRogue/src/MR_Game_Logic/Dungeon.java</file>
-            <file>file:/C:/Users/pedri/Google%20Drive/ISEC/PA/MiniRogue/src/MR_Game_Logic/States/IStates.java</file>
-            <file>file:/C:/Users/pedri/Google%20Drive/ISEC/PA/MiniRogue/src/MR_Game_Logic/States/AwaitCardSelection.java</file>
+            <file>file:/C:/Users/Foca/Google%20Drive/ISEC/PA/MiniRogue/src/MR_Game_Logic/MR_Game.java</file>
+            <file>file:/C:/Users/Foca/Google%20Drive/ISEC/PA/MiniRogue/src/MR_Game_Logic/Cards/Merchant.java</file>
+            <file>file:/C:/Users/Foca/Google%20Drive/ISEC/PA/MiniRogue/src/MR_Game_Logic/Dungeon.java</file>
+            <file>file:/C:/Users/Foca/Google%20Drive/ISEC/PA/MiniRogue/src/MR_Game_Logic/Dice.java</file>
+            <file>file:/C:/Users/Foca/Google%20Drive/ISEC/PA/MiniRogue/src/MR_Game_Logic/States/IStates.java</file>
+            <file>file:/C:/Users/Foca/Google%20Drive/ISEC/PA/MiniRogue/src/MR_Game_Logic/States/AwaitBeginning.java</file>
+            <file>file:/C:/Users/Foca/Google%20Drive/ISEC/PA/MiniRogue/src/MR_Text_UI/TextUI.java</file>
+            <file>file:/C:/Users/Foca/Google%20Drive/ISEC/PA/MiniRogue/src/MR_Game_Logic/Cards/Boss_Monster.java</file>
+            <file>file:/C:/Users/Foca/Google%20Drive/ISEC/PA/MiniRogue/src/MR_Game_Logic/Cards/Event.java</file>
+            <file>file:/C:/Users/Foca/Google%20Drive/ISEC/PA/MiniRogue/src/MR_Game_Logic/States/StateAdapter.java</file>
+            <file>file:/C:/Users/Foca/Google%20Drive/ISEC/PA/MiniRogue/src/MR_Game_Logic/Card.java</file>
+            <file>file:/C:/Users/Foca/Google%20Drive/ISEC/PA/MiniRogue/src/MR_Game_Logic/States/AwaitCardSelection.java</file>
+            <file>file:/C:/Users/Foca/Google%20Drive/ISEC/PA/MiniRogue/src/MR_Game_Logic/Cards/Resting.java</file>
+            <file>file:/C:/Users/Foca/Google%20Drive/ISEC/PA/MiniRogue/src/MR_Game_Logic/States/AwaitRest.java</file>
+            <file>file:/C:/Users/Foca/Google%20Drive/ISEC/PA/MiniRogue/src/MR_Game_Logic/States/AwaitTrading.java</file>
+            <file>file:/C:/Users/Foca/Google%20Drive/ISEC/PA/MiniRogue/src/MR_Game_Logic/GameData.java</file>
+            <file>file:/C:/Users/Foca/Google%20Drive/ISEC/PA/MiniRogue/src/MR_Game_Logic/Player.java</file>
         </group>
     </open-files>
 </project-private>

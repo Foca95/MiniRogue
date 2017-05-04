@@ -44,14 +44,19 @@ public class MR_Game
         return gameData.dungeoToString();
     }                    
 
-    public int getLevelDungeon()
+    public int getLevel()
     {
         return gameData.getLevel();
     }
     
-    public int getArenaDungeon()
+    public int getArena()
     {
         return gameData.getArena();
+    }
+    
+    public int getArenaLevel()
+    {
+        return gameData.getArenaLevel();
     }
     
     public Player getPlayer()
@@ -63,6 +68,28 @@ public class MR_Game
     {
         return gameData.getPlayer().getHp();
     }
+ 
+    public Dungeon getDungeon() {
+        return gameData.getDungeon();
+    }
+
+    public int getNumDices() {
+        return gameData.getNumDices();
+    }
+
+    public int getDifficulty() {
+        return gameData.getDifficulty();
+    }
+
+    public Dice getDice() {
+        return gameData.getDice();
+    }
+    
+    public String getUiText(){
+        return gameData.getUiText();
+    }
+    
+    
     
     // Methods that are intended to be used by the user interfaces and that are delegated in the current state of the finite state machine 
     
@@ -83,17 +110,25 @@ public class MR_Game
     public void startGame(){
         setState(getState().startGame());
     }
-  
-    public void resolveCard(){
-        setState(getState().resolveCard());
+
+    public void resolveTreasureCard(int roll, int roll2){
+        setState(getState().resolveTreasureCard(roll, roll2));
     }
-   
+    
+    public void resolveTrapCard(int firstRoll, int SecondRoll){
+        setState(getState().resolveTrapCard(firstRoll, SecondRoll));
+    }
+    
+    public void resolveEventCard(int option){
+        setState(getState().resolveEventCard(option));
+    }
+    
     public void setRestOption(int option){
         setState(getState().setRestOption(option));
     }
    
-    public void tradeOption(int option){
-        setState(getState().tradeOption(option));
+    public void skip(){
+        setState(getState().skip());
     }
     
     public void sellOption(int option){
@@ -107,4 +142,13 @@ public class MR_Game
     public void endGame(){
         setState(getState().endGame());
     }
+
+    public void nextArenaLevel() {
+          setState(getState().skip());
+    }
+    
+    public void resolveCard(String card){
+        setState(getState().resolveCard(card));
+    }
+    
 }

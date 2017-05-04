@@ -6,6 +6,7 @@
 package MR_Game_Logic;
 
 import MR_Game_Logic.Card;
+import MR_Game_Logic.Cards.Boss_Monster;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -24,8 +25,14 @@ public class Dungeon {
     HashMap<Integer, List<Card>> level5;
     
     public Dungeon(){
+        card = new Card();
         cards = new ArrayList<>();
         cardsBoss = new ArrayList<>();
+        level1 = new HashMap<>();
+        level2 = new HashMap<>();
+        level3 = new HashMap<>();
+        level4 = new HashMap<>();
+        level5 = new HashMap<>();
     }
     
     public void createDungeon(){
@@ -57,5 +64,21 @@ public class Dungeon {
     
     public void initiateBossArea(int level){
         cardsBoss = card.getCardsBoss(level);
+    }
+    
+    public String currentCard(int area, int level, int areaLevel){
+        switch(level){
+            case 1:
+                return level1.get(area).get(areaLevel).getName();
+            case 2:
+                return level2.get(area).get(areaLevel).getName();
+            case 3:
+                return level3.get(area).get(areaLevel).getName();
+            case 4:
+                return level4.get(area).get(areaLevel).getName();
+            case 5:
+                return level5.get(area).get(areaLevel).getName();               
+        }
+        return null;
     }
 }

@@ -5,6 +5,9 @@
  */
 package MR_Main;
 
+import MR_Game_Logic.MR_Game;
+import MR_Text_UI.TextUI;
+
 /**
  *
  * @author pedri
@@ -15,26 +18,9 @@ public class MiniRogue {
      * @param args the command line arguments
      */
     public static void main(String[] args){
-        
-//        while(true){
-//            if(game.getState().toString().compareTo(STOP_STATE) == 0)
-//                System.out.println("Game was stopped by the user!\n");
-//            
-//            game.setMenuOption(ui.textUI.menu.show(GAME_MENU));
-//
-//            switch(game.getMenuOption()){
-//                case 1:
-//                    game = new ObservableGame();
-//                    ui.textUI.board.show(ui, game);
-//                   break;
-//                case 2:
-//                    if(fm.loadGame(game))
-//                        ui.textUI.board.show(ui, game);
-//                    break;
-//                case 3:
-//                    System.exit(0);
-//            }
-//        }
+        TextUI textUI = new TextUI(new MR_Game());
+        textUI.run();
+    
     }
     
     
