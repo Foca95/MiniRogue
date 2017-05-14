@@ -90,6 +90,12 @@ public class MR_Game
         return gameData.getUiText();
     }
     
+    public String getPlayerStats(){
+       return gameData.getPlayer().playerToString();
+    }
+     public String getDungeonStats(){
+       return gameData.dungeonToString();
+     }
     
     
     // Methods that are intended to be used by the user interfaces and that are delegated in the current state of the finite state machine 

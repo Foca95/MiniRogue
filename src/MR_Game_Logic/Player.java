@@ -27,6 +27,14 @@ public class Player implements Constants{
         
     }
     
+    public String playerToString(){
+       
+        String stats ="";
+        
+        stats = "NAME " + name + "|HP " + hp + "|GOLD " + gold + "|FOOD " + food + "|ARMOR " + armor + "|RANK " + rank + "|XP " 
+                + xp;
+        return stats;
+    }
     public Player(int difficulty, String name){
         switch(difficulty){
             case NORMAL:

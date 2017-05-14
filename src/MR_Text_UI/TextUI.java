@@ -154,6 +154,8 @@ public class TextUI {
         if (flipCard == 2) {
             quit = true;
         } else {
+            System.out.println(game.getPlayerStats());
+            System.out.println(game.getDungeonStats());
             if (column == 2) {
                 card2 = game.getDungeon().currentCard(game.getArena(), game.getLevel(), 2);
                 System.out.println();

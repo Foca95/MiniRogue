@@ -24,17 +24,17 @@ public class AwaitRest extends StateAdapter{
         int pFood = p.getFood();
         int pHealth = p.getHp();
         if(option == 1){
-            pXp = pXp + 1;
+            p.setXp(pXp + 1);
             getGame().setUiText("Ganhou 1 de Xp");
             getGame().checkLevelUp();
         }
         if(option == 2){
             getGame().setUiText("Ganhou 1 de Food");
-            pFood = pFood + 1;
+            p.setFood(pFood + 1); 
         }
         if(option == 3){
             getGame().setUiText("Ganhou 2 de Hp");
-            pHealth = pHealth + 2;
+            p.setHp(pHealth + 2);
         }
         getGame().checkCardEnd();
         return new AwaitCardSelection(getGame());

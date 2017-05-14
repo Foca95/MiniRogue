@@ -29,6 +29,7 @@ public class GameData {
     private String uiText;
     private String currentCard;
     private int column;
+    private String playerStats;
     
     
     public GameData(){
@@ -37,6 +38,12 @@ public class GameData {
         player = new Player();
         arena = 1;
         difficulty = CASUAL;
+    }
+    
+    public String dungeonToString(){
+        String dungeon="";
+        dungeon = "LEVEL " + level + "|ARENA " + arena;
+        return dungeon;
     }
     
     public boolean initialize(){
@@ -285,6 +292,14 @@ public class GameData {
 
     public void setUiText(String uiText) {
         this.uiText = uiText;
+    }
+    
+     public String getPlayerStats() {
+        return playerStats;
+    }
+
+    public void setPlayerStats(String playerStats) {
+        this.playerStats = playerStats;
     }
 
     public String getCurrentCard() {
