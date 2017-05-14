@@ -1,0 +1,5 @@
+build/classes/MR_Game_Logic/Dungeon.class
+build/classes/MR_Game_Logic/GameData.class
+*.class
+*.class
+build/classes/MR_Game_Logic/MR_Game.class
