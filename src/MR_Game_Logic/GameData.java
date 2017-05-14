@@ -28,6 +28,7 @@ public class GameData {
     private int arenaLevel;
     private String uiText;
     private String currentCard;
+    private int column;
     
     
     public GameData(){
@@ -44,6 +45,7 @@ public class GameData {
         arena = 1;
         arenaLevel = 0;
         fight = false;
+        column = 1;
         dungeon.createDungeon();
         player = new Player(difficulty, player.getName());
         currentCard = getDungeon().currentCard(arena, level, arenaLevel);
@@ -57,6 +59,7 @@ public class GameData {
         setLevelByArena(area);
         numDices = 1;
         fight = false;
+        column = 1;
         dungeon.createDungeon();
         currentCard = getDungeon().currentCard(arena, level, arenaLevel);
         player = new Player(difficulty, player.getName());
@@ -104,13 +107,31 @@ public class GameData {
         return false;
     }
     
-    public void onArenaEnd(){
-        if(player.getFood() == 0){
-            player.setHp(player.getHp() - 2);
+    public void checkCardEnd() {
+        if (column == 2) {
+            if(arenaLevel == 1)
+                setArenaLevel(getArenaLevel() + 2);
+            else
+                setArenaLevel(getArenaLevel() + 1);
+            setColumn(getColumn() + 1);
+            return;
         }
-        else
-            player.setFood(player.getFood() - 1);
-        arena++;
+        if (column == 4 && arena == 4 ||column == 4 && arena == 7 ||column == 4 && arena == 10 ||column == 4 && arena == 14) {
+            //falta boss-monster
+        }
+        if (column == 4){
+            if (player.getFood() == 0) {
+                player.setHp(player.getHp() - 2);
+            } else {
+                player.setFood(player.getFood() - 1);
+            }
+            setArena(getArena() + 1);
+            setArenaLevel(0);
+            setColumn(1);
+            return;
+        }
+        setArenaLevel(getArenaLevel() + 1);
+        setColumn(getColumn() + 1);
     }
     
     public void removesSpell(){
@@ -249,12 +270,6 @@ public class GameData {
     public void setArenaLevel(int arenaLevel) {
         this.arenaLevel = arenaLevel;
     }
-
-    public String dungeoToString() {
-        String ola = null;
-        
-        return ola;
-    }
     
     public boolean isFight() {
         return fight;
@@ -270,6 +285,22 @@ public class GameData {
 
     public void setUiText(String uiText) {
         this.uiText = uiText;
+    }
+
+    public String getCurrentCard() {
+        return currentCard;
+    }
+
+    public void setCurrentCard(String currentCard) {
+        this.currentCard = currentCard;
+    }
+
+    public int getColumn() {
+        return column;
+    }
+
+    public void setColumn(int column) {
+        this.column = column;
     }
     
     
