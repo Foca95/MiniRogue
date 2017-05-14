@@ -90,6 +90,10 @@ public class MR_Game
         return gameData.getUiText();
     }
     
+    public void setUiTextLimpeza(){
+       gameData.setUiText("");
+    }
+    
     public String getPlayerStats(){
        return gameData.getPlayer().playerToString();
     }
