@@ -146,7 +146,6 @@ public class TextUI {
         int column = game.getColumn();
         int roll = game.getDice().getRoll();
         System.out.println(game.getUiText());
-        game.setUiTextLimpeza();
         System.out.println("\nFlip next card ?");
         System.out.println("\n1 - Yes");
         System.out.println("\n2 - No");
@@ -285,9 +284,6 @@ public class TextUI {
                 System.out.print("\nYour option : ");
                 option = sc.nextInt();
                 game.buyOption(option);
-                System.out.println(game.getUiText());
-                System.out.println(game.getPlayerStats());
-                game.setUiTextLimpeza();
                 break;
             case 2:
                 System.out.println("|=========Sell Menu========|");
@@ -296,9 +292,6 @@ public class TextUI {
                 System.out.print("\nYour option : ");
                 option = sc.nextInt();
                 game.sellOption(option);
-                System.out.println(game.getPlayerStats());
-                System.out.println(game.getUiText());
-                game.setUiTextLimpeza();
                 break;
             case 3:
                 System.out.println("|=========Card Skipped========|");
