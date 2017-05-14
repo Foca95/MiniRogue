@@ -19,7 +19,7 @@ public class AwaitTrading extends StateAdapter implements Constants{
     
     @Override
     public IStates skip() {
-        getGame().checkCardEnd();
+        getGame().setArenaLevel(getGame().getArenaLevel()+ 1);
         return new AwaitCardSelection(getGame());
 
     }
@@ -99,6 +99,10 @@ public class AwaitTrading extends StateAdapter implements Constants{
             case 5:
                 if(pGold < 8){
                     getGame().setUiText("Nao tem Gold suficiente");
+                    break;
+                }
+                if(p.spells.size() == 2){
+                    getGame().setUiText("Ja tem o maximo de spells");
                     break;
                 }
                 p.setGold(pGold - 8);

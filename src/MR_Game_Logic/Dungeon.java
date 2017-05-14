@@ -81,18 +81,4 @@ public class Dungeon {
         }
         return null;
     }
-    
-    public int currentColumn(int areaLevel){
-        if(areaLevel == 0)
-            return 1;
-        if(areaLevel == 1 || areaLevel == 2)
-            return 2;
-        if(areaLevel == 3)
-            return 3;
-        if(areaLevel == 4 || areaLevel == 5)
-            return 4;
-        if(areaLevel == 6)
-            return 5;
-        return 0;
-    }
 }

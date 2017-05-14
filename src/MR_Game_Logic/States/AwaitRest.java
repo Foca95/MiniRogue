@@ -36,7 +36,7 @@ public class AwaitRest extends StateAdapter{
             getGame().setUiText("Ganhou 2 de Hp");
             p.setHp(pHealth + 2);
         }
-        getGame().checkCardEnd();
+        getGame().setArenaLevel(getGame().getArenaLevel()+ 1);
         return new AwaitCardSelection(getGame());
     }
 }

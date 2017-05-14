@@ -38,7 +38,11 @@ public class MR_Game
     }        
     
      // Methods retrieve data from the game
-                       
+    
+    public String dungeonToString()
+    {
+        return gameData.dungeoToString();
+    }                    
 
     public int getLevel()
     {
@@ -53,11 +57,6 @@ public class MR_Game
     public int getArenaLevel()
     {
         return gameData.getArenaLevel();
-    }
-    
-    public int getColumn()
-    {
-        return gameData.getColumn();
     }
     
     public Player getPlayer()

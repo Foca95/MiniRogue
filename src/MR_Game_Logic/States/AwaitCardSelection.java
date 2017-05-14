@@ -71,7 +71,7 @@ public class AwaitCardSelection extends StateAdapter{
                     break;
             }
         }
-        getGame().checkCardEnd();
+        getGame().setArenaLevel(getGame().getArenaLevel() + 1);
         return this;
     }
 
@@ -112,7 +112,7 @@ public class AwaitCardSelection extends StateAdapter{
 
             }
         }
-        getGame().checkCardEnd();
+        getGame().setArenaLevel(getGame().getArenaLevel() + 1);
         return this;
     }
 
@@ -149,7 +149,7 @@ public class AwaitCardSelection extends StateAdapter{
                 getGame().setUiText("Fase de Combate");
                 break;
         }
-        getGame().checkCardEnd();
+        getGame().setArenaLevel(getGame().getArenaLevel() + 1);
         return this;
     }
     
